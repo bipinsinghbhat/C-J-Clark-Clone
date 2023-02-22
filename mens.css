@@ -1,0 +1,88 @@
+.top{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    background-color: red;
+    color: white;
+}
+.top1{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    background-color: rgb(186, 180, 180);
+}
+.navbar{
+    display: flex;
+    gap: 25px;
+    justify-content: first baseline;
+
+}
+.navbar>div{
+   
+    margin-left: 40%;
+}
+.gray{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    background-color: rgb(208, 189, 189);
+}
+.redbox{
+    display: flex;
+    justify-content:space-between;
+    background-color: rgba(253, 6, 6, 0.938);
+}
+.redbox>img{
+    width: 100%;
+}
+.innerbox{
+    width: 70%;
+    color: white;
+    text-align: center;
+
+}
+.redbox>div{
+    border: 1px solid green;
+}
+.redbox>div>img{
+    width: 100%;
+}   
+.inblack{
+    width: 65%;
+    background-color: black;
+    margin-left: 20%;
+}
+.boxes{
+    width: 50%;
+    display: flex;
+    gap: 15px;
+    border: 1px solid blueviolet;
+    margin-left: 28%;
+    
+}
+.boxes>div{
+   background-color: white;
+   color: black;
+    border: 1px solid black;
+}
+.img>img{
+    width: 100%;
+}
+
+.black>div{
+   margin-left: 40%; 
+   color: white;
+}
+.black{
+    background-color: black;
+}
+.black>div>div{
+    gap: 15px;
+    display: flex;
+}
+.black>div>div>div{
+    border: 1px solid white;
+    color: black;
+    background-color: white;
+    margin-bottom: 5px;
+}
