@@ -2,8 +2,8 @@ body{
     width:90%;
     margin:auto;
     color:#666666;
-    font-family: sans-serif;
-}
+    font-family: Montserrat, sans-serif;
+  }
  input[type=email], input[type=password]{
     width: 150%;
     padding: 12px 20px;
@@ -27,7 +27,8 @@ body{
     box-sizing: border-box;
     font-size: 14px;
     color:#FFFFFF;
-    background-color:rgb(52, 52, 248);
+    background-color:#0579D0;
+
   }
   p{
     margin-left: 10px;
