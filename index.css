@@ -5,11 +5,23 @@
     background-color: red;
     color: white;
 }
+.top>:nth-child(1)
+{
+    margin-top: 20px;
+}
+.top>:nth-child(3)
+{
+    margin-top: 20px;
+}
 .top1{
     display: flex;
     gap: 10px;
     justify-content: end;
     background-color: rgb(186, 180, 180);
+}
+.top1>a{
+    text-decoration: none;
+    color: black;
 }
 .navbar{
     display: flex;
@@ -21,11 +33,22 @@
    
     margin-left: 40%;
 }
+.navbar a {
+    text-decoration: none;
+}
 .gray{
     display: flex;
     gap: 40px;
     justify-content: center;
     background-color: rgb(208, 189, 189);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.gray a{
+    text-decoration: none;
+    color: blue;
 }
 .redbox{
     display: flex;
@@ -42,7 +65,7 @@
 
 }
 .redbox>div{
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 .redbox>div>img{
     width: 100%;
@@ -53,17 +76,23 @@
     margin-left: 20%;
 }
 .boxes{
-    width: 50%;
+    width: 80%;
     display: flex;
     gap: 15px;
-    border: 1px solid blueviolet;
-    margin-left: 28%;
+    /* border: 1px solid blueviolet; */
+    margin-left: 10%;
     
 }
 .boxes>div{
+
+    width: 60%;
    background-color: white;
    color: black;
-    border: 1px solid black;
+    border: 1px solid rgb(11, 9, 9);
+}
+.boxes>div:hover{
+    background-color: black;
+    color: white;
 }
 .img>img{
     width: 100%;
@@ -86,6 +115,17 @@
     background-color: white;
     margin-bottom: 5px;
 }
+.black a{
+    text-decoration: none;
+    color: black;
+}
+.black>div>div>div:hover{
+    background-color: black;
+    color: white;
+}
+.black a:hover{
+    color: white;
+}
 .img1{
     display: flex;
 }
@@ -96,7 +136,11 @@
     display: flex;
     justify-content: space-between;
     justify-content: space-around;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+}
+.lowerbox>div{
+    width: 40%;
+    
 }
 .lowerbox>div>div>div{
     text-align: center;
@@ -107,18 +151,38 @@
     display: flex;
     gap: 10px;
 }
+.block>div{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+}
+.block>div:hover{
+    background-color: black;
+    color: white;
+}
+.block a {
+    text-decoration: none;
+    color: black;
+}
+.block a:hover{
+    color: white;
+}
 .world>div>div{
     padding-top: 5px;
     padding-bottom: 5px;
 }
 .world{
+    width: 60%;
+    margin: auto;
      padding-top: 30px;
      padding-bottom: 30px;
     text-align: center;
     background-color: rgb(248, 243, 243);
 }
 .world>div{
-    width: 35%;
+    width: 85%;
     margin: auto;
     /* border: 1px solid blue; */
     display: flex;
@@ -129,9 +193,22 @@
    
 }
 .world>div>div{
+    width: 35%;
     padding-left: 5px;
     padding-right: 5px;
     border: 1px solid black;
+}
+.world>div>div:hover{
+    background-color: black;
+    color: white;
+}
+
+.world a {
+    text-decoration: none;
+    color: black;
+}
+.world a:hover{
+    color: white;
 }
 .blue{
     background-color: rgb(67, 67, 232);
@@ -141,13 +218,20 @@
     
     
 }
+.blue a{
+    text-decoration: none;
+    color: white;
+}
 .anchor{
     color: white;
 }
 .img3{
     display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
 }
 .pink{
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     justify-content: space-around;
@@ -160,8 +244,12 @@
     width: 100%;
 }
 .img3>img{
-    width: 25%;
+    width: 23%;
+}
+.img3:hover{
+    size: 120%;
 }
 .footer>img{
+    margin-top: 5px;
    width: 100%;
 }
