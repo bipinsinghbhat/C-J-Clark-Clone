@@ -24,14 +24,32 @@
 
 
 
-
 let container=document.getElementById("container")
+let filterselect=document.getElementById("filterr3")
+let fetcheddata=[]
+
+
+filterselect.addEventListener("change",()=>{
+  let filtereddata=fetcheddata.filter((element)=>{
+    if(element.type===filterselect.value){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  display(filtereddata)
+})
+
+
+
 fetch(`https://buy-ffashion.onrender.com/Mensshoe`)
  
 .then((res)=>{
   return res.json()
 })
 .then((actdata)=>{
+  fetcheddata=actdata
   console.log(actdata)
  
   display(actdata)
@@ -79,5 +97,7 @@ alert("Already Placed Order")
 card.append(image,name,price,description,type,id,Buy)
  container.append(card)
 })
-}
+} 
+
+
 

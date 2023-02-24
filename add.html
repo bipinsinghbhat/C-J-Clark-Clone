@@ -1,0 +1,271 @@
+<!-- <!-- <div class="one">
+    <select class="filter" id="filterr">
+        <option value="">Size</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+      </select>
+    </div>
+    <div class="one">
+      <select class="filter" id="filterr">
+          <option value=""> COLOR</option>
+          <option value="Beige">Beige</option>
+          <option value="Black">Black</option>
+          <option value="Blue">Blue</option>
+          <option value="Brown">Brown</option>
+          <option value="Grey">Grey</option>
+          
+        </select>
+      </div>
+      <div class="one">
+        <select class="filter" id="filterr3">
+            <option value=""> Type</option>
+            <option value="White Leather">White Leather</option>
+            <option value="Black">Black</option>
+            <option value="Navy Multi">Navy Multi</option>
+            <option value="Brown">Brown</option>
+            <option value="Olive">Olive</option>
+            <option value="Cobalt">Cobalt</option>
+            <option value="Grey">Grey</option>
+            <option value="White">White</option>
+          </select>
+        </div>
+
+
+      <div class="one">
+        <select class="filter" id="filterr">
+            <option value="">STYLE</option>
+            <option value="ANKLE BOOTS">ANKLE BOOTS</option>
+            <option value="DERBY SHOE">DERBY SHOE</option>
+            <option value="LOAFERS & SLIP">LOAFERS & SLIP</option>
+            <option value="SLIP ONS">SLIP ONS</option>
+           
+          </select>
+        </div>
+        <div class="one">
+          <select class="filter" id="filterr">
+              <option value=""> PRODUCT TYPE</option>
+              <option value="BOOTS">BOOTS</option>
+              <option value="SHOE">SHOE</option>
+             
+            </select>
+          </div>
+          <div class="one">
+            <select class="filter" id="filterr">
+                <option value="">WIDTH</option>
+                <option value="EXTRA WIDE">EXTRA WIDE</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="WIDE">WIDE</option>
+                
+              </select>
+            </div>
+            <div class="one">
+              <select class="filter" id="filterr">
+                  <option value="">MATERIAL</option>
+                  <option value="LEATHER">LEATHER</option>
+                  <option value="SUEDE">SUEDE</option>
+                  <option value="Hoodie">hoodies</option>
+                 
+                </select>
+              </div>
+              <div class="one">
+                <select class="filter" id="filterr">
+                    <option value="">FEATURES AND TECH</option>
+                    <option value="ACS">ACS</option>
+                    <option value="BREATHABLE">BREATHABLE</option>
+                    <option value="EXTRA CONFORT">EXTRA CONFORT</option>
+                    <option value="RESPONSIBLE LEATHER">RESPONSIBLE LEATHER</option>
+                    <option value="WATERPROOF">WATERPROOF</option>
+                  
+                  </select>
+                </div>
+                <div class="one">
+                  <select class="filter" id="filterr">
+                      <option value=""> PRICE</option>
+                      <option value="40">$40-$89</option>
+                      <option value="90">$90-$119</option>
+                      <option value="120">$120-$149</option>
+                      <option value="150">$150</option>
+                      
+                    </select>
+                  </div>
+                  <div class="one">
+                    <select class="filter" id="filterr">
+                        <option value=""> TOP RATED</option>
+                       
+                      </select>
+                    </div>
+
+
+</div> -->
+
+
+
+<!-- let container=document.getElementById("container")
+let filterselect=document.getElementById("filterr3")
+let fetcheddata=[]
+
+
+filterselect.addEventListener("change",()=>{
+  let filtereddata=fetcheddata.filter((element)=>{
+    if(element.type===filterselect.value){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  display(filtereddata)
+})
+
+
+
+fetch(`https://buy-ffashion.onrender.com/Mensshoe`)
+ 
+.then((res)=>{
+  return res.json()
+})
+.then((actdata)=>{
+  fetcheddata=actdata
+  console.log(actdata)
+ 
+  display(actdata)
+})
+
+
+function display(data){
+container.innerText=null
+ data.forEach((element)=>{
+  let card=document.createElement("div")
+  let image=document.createElement("img")
+  image.setAttribute("src",element.img)
+  let name=document.createElement("h2")
+  name.innerText=element.title
+  let price=document.createElement("h2")
+  price.innerText=element.price;
+let description=document.createElement("h2")
+description.innerText=element.description;
+let type=document.createElement("h2")
+type.innerText=element.type;
+let id=document.createElement("h2")
+id.innerText=element.id;
+
+let Buy=document.createElement("button");
+Buy.innerText="Buy"
+Buy.addEventListener("click",()=>{
+  
+let orderdata=JSON.parse(localStorage.getItem("buy"))||[] 
+  let present=false;
+  for(let i=0;i<orderdata.length;i++){
+    if(element.id===orderdata[i].id){
+      present=true;
+    }
+  }
+  if(present==true){
+alert("Already Placed Order")
+  }
+  else{
+    orderdata.push(element)
+    localStorage.setItem("buy",JSON.stringify(orderdata))
+  alert("Successfully Placed Order")
+  }
+})
+
+card.append(image,name,price,description,type,id,Buy)
+ container.append(card)
+})
+} -->
+<!-- 
+#bigbox{
+    border:2px solid red;
+    width: 90%;
+    margin: auto;
+    }
+    #bigbox h1{
+        text-align: center;
+    }
+    
+    #bigbox p{
+        padding-left: 200px;
+        padding-right: 200px;
+        text-align: center;
+    }
+    
+    #box1{
+        border:2px solid red;
+        
+    }
+    #box2 {
+        display: flex;
+      justify-content: center;
+      gap: 40px;
+       
+      
+        
+    }
+    #box2 a{
+        border:2px solid grey;
+    }
+    #box3 {
+         display: flex; 
+         gap: 20px;
+    }
+    #box3 a{
+        border:2px solid grey;
+     
+    }
+    #secondbigbox{
+        border:2px solid grey;
+        display: flex; 
+    }
+    #filterdetails{
+        border:2px solid black;
+        width: 20%;
+    }
+    #cont_sort{
+        border:2px solid black;
+        width: 80%;
+    }
+    #sortby{
+        border:2px solid grey;
+        display: flex; 
+    }
+    
+    
+    
+    #container{
+        border:2px solid grey;
+       
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+       
+        
+    }
+    #container div{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        
+    }
+    
+    #container img{
+        margin: auto;
+        width: 80%;
+    }
+    
+    #container button{
+        
+        margin-left: 120px;
+       height: 30px;
+       width: 50px;
+    }
+    
+    .filter{
+        font-size: 20px;
+        width: 100%;
+       
+     }
+     --> -->
