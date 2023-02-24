@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #firstdiv {
+
+            text-align: center;
+            background-color: lavenderblush;
+        }
+
+        #first1 {
+            text-align: center;
+
+
+
+
+        }
+
+        #first1 p {
+            font-size: 20px
+        }
+
+        /* 
+       upper btn wala section */
+        #upperBtn {
+            margin: 90%;
+            margin: auto;
+            text-align: center;
+            justify-content: space-evenly;
+
+        }
+
+        #upperBtn>button {
+            justify-content: space-around;
+            background-color: white;
+            margin: 5px 5px;
+        }
+
+        
+        /* sorting things */
+        #sort {
+            text-align: end;
+        }
+
+        #container {
+            display: flex;
+          
+        }
+
+        #products{
+            display: grid;
+          grid-template-columns: repeat(3,1fr);
+        }
+    </style>
 </head>
+
 <body>
+    <!-- nav ke niche ka -->
+
+    <P id="firstdiv"> <u>FREE SHIPPING </u> ON ORDERS OVER $50 | <u> FREE RETURNS</u> EVERY DAY</P>
+
+    <p style="font-size: 30px; text-align: center;">WOMENS BOOTS</p>
+
+    <div id="first1">
+        <p>Explore our collection of fashion boots for women, including ankle boots and Chelsea boots in leather and
+            suede, plus stylish waterproof boots for fall. The most comfortable footwear for any occasion, our ladies'
+            boots are designed with style and practicality in mind. Explore our designs and find your perfect pair here.
+        </p>
+    </div>
+
+
+    <div id="upperBtn">
+        <button>WOMENS BOOTIES</button>
+        <button>WOMENS KNEE HIGH BOOTS</button>
+        <button>WOMEN WARM BOOTS</button>
+        <button>WOMENS COMFORT BOOTS</button>
+    </div>
+
+
+    <div id="sort">
+        <select name="sort" id="port" style="width: 150px ;height: 40px; font-size: 15px;">
+            <option value="">Sort By Relvence</option>
+            <option value="priceA">A-Z</option>
+            <option value="priceB">Z-A</option>
+            <option value="lh">Price(Low-High)</option>
+            <option value="hl">Price(High-low)</option>
+        </select>
+    </div>
+
+    <div id="container">
+        <div id="filter">
+            <p>FILTER BY:-</p>
+            <select name="color" id="color" style="width: 150px ;height: 40px; font-size: 15px;">
+                <option value="">COLOUR</option>
+                <option value="olive">OLIVE</option>
+                <option value="black">Black</option>
+                <option value="pink">PINK</option>
+                <option value="Tan">TAN</option>
+                <option value="brown">BROWN</option>
+
+            </select>
+            <select name="Size" id="size" style="width: 150px ;height: 40px; font-size: 15px;">
+                <option value="">SIZE</option>
+                <option value=7>7</option>
+                <option value=6>6</option>
+                <option value=5>5</option>
+                <option value=8>8</option>
+
+            </select>
+
+            <select name="Material" id="Material" style="width: 150px ;height: 40px; font-size: 15px;">
+                <option value="">MATERIAL</option>
+                <option value="leather">LEATHER</option>
+                <option value="Nubuck">NUBUCK</option>
+                <option value="suede">SUEDE</option>
+            </select>
+            <select name="Price" id="price" style="width: 150px ;height: 40px; font-size: 15px;">
+                <option value="">Price</option>
+                <option value=50>$40-$49.99</option>
+                <option value=60>$50-$59.99</option>
+                <option value=70>$60-$69.99</option>
+                <option value=80>$70-$79.99</option>
+                <option value=90>$80-$89.99</option>
+                <option value=100>$90-$99.99</option>
+
+            </select>
+        </div>
+        <div id="products">
+
+        </div>
+    </div>
     
+
 </body>
+<script src="./boot.js"></script>
+
 </html>
