@@ -69,7 +69,7 @@ let orderdata=JSON.parse(localStorage.getItem("buy"))||[]
   if(present==true){
 alert("Already Placed Order")
   }
-  else{
+  else{ element.quantity=1;
     orderdata.push(element)
     localStorage.setItem("buy",JSON.stringify(orderdata))
   alert("Successfully Placed Order")
