@@ -1,0 +1,141 @@
+body{
+    width:90%;
+    margin:auto;
+    color:#666666;
+    font-family: Montserrat, sans-serif;
+}
+
+.creat{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#333333;
+    /* margin-bottom: 100px; */
+    border-bottom: 1px solid gray;
+   
+    padding:30px 0px;
+  }
+  .creat>span{
+    margin-left: 10px;
+font-size: 45px;
+  }
+  .creat>div{
+    width:40%;
+    text-align:right;
+  }
+  .checkout{
+    width: 100%;
+    padding: 12px 20px;
+    /* margin: 10px 10px; */
+    border:none;
+    box-sizing: border-box;
+    font-size: 14px;
+    color:#FFFFFF;
+    background-color:#0579D0;
+  }
+  /* p{
+    margin-left: 10px;
+  } */
+ .checkout:hover{
+    background-color: #666666;
+  }
+  #back{
+    font-size: 16px ;
+    border-bottom:none;
+    border-color:white;
+    color:#333333;
+
+    padding:34px 30px 34px 30px;
+  }
+  .bac{
+    background-color: rgb(248, 245, 245);
+    height:60px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    /* justify-content: space-around; */
+    text-align: center;
+    margin:auto;
+  }
+  .del{
+    background-color: rgb(248, 245, 245);
+    height:60px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    margin:auto;
+  }
+  .container{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+
+  }
+  .carts{
+    width:60%;
+    display:flex;
+    justify-content: space-between;
+    
+    /* border:1px solid; */
+  }
+  .carts>div{
+    width:50%;
+    text-align: right;
+    /* border:solid; */
+  }
+  .carts>div>img{
+    width:100%;
+  }
+  .checkout-total{
+    
+    width:30%;
+  }
+  .checkout-total>img{
+    width:50%;
+    margin:10px;
+    margin-left:90px;
+  }
+  .checkout-total>span{
+    text-align: justify;
+  }
+  #inc,#dec{
+    width:40px;
+    height:40px;
+    background-color: white;
+    border:1px solid;
+  }
+  #number{
+    width:60px;
+    height:40px;
+    background-color: white;
+    border:1px solid;
+  }
+  .creattotal{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#333333;
+    border-bottom: 1px solid gray;
+   
+  }
+  [type=text]{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 10px 10px;
+    box-sizing: border-box;
+  }
+  .apply{
+    width:30%;
+    padding: 12px 20px;
+    background-color: white;
+    border:1px solid;
+
+  }
+  .coupon{
+    margin-top:50px;
+    margin-bottom: 50px;
+  }
+
+  
