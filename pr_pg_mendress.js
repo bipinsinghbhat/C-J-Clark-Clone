@@ -1,41 +1,75 @@
+
+
+window.addEventListener("load",()=>{
+  fetchdata(1)
+})
+
+
 let container=document.getElementById("container")
+let pagination=document.getElementById("pag")
 
-// fetch("https://buy-fashion.onrender.com/Mensdress")
-// .then((res)=>{
-//     return res.json()
-// })
-// .then((data)=>{
-//     console.log(data)
-// })
-
-// async function getData(){
-//    try {
-//     let resp=await fetch("https://buy-fashion.onrender.com/Mensdress")
-//     let data=await resp.json()
-//     console.log(data);
-//    } catch (error) {
-//     console.log(error);
-//    }
-// }
-// getData()
+let filterselect=document.getElementById("filterr3")
+let fetcheddata=[]
 
 
+filterselect.addEventListener("change",()=>{
+  let filtereddata=fetcheddata.filter((element)=>{
+    if(element.type===filterselect.value){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  display(filtereddata)
+})
 
 
-
-
-
-
-fetch(`https://buy-ffashion.onrender.com/Mensdress`)
+function fetchdata(pageNumber=1){ 
+fetch(`https://buy-ffashion.onrender.com/Mensdress?_limit=9&_page=${pageNumber}`)
  
 .then((res)=>{
+ let totalusers=res.headers.get("X-Total-Count")
+ showpagination(totalusers,9)
   return res.json()
 })
 .then((actdata)=>{
+  fetcheddata=actdata
   console.log(actdata)
  
   display(actdata)
 })
+}
+
+function showpagination(totalItems,limit){
+  const numofbtns=Math.ceil(totalItems/limit);
+  pagination.innerHTML=`
+  ${getbutton(1,1)}
+  ${getbutton(2,2)}
+  `
+
+
+
+
+let paginationbtn=document.querySelectorAll(".pagination-button")
+
+
+for(let btn of paginationbtn){
+  btn.addEventListener("click",function(e){
+    let pageNumber=e.target.dataset["pageNumber"];
+    fetchdata(pageNumber)
+
+  })
+}
+}
+
+function getbutton(text,pageNumber){
+  return`
+  <button class="pagination-button" data-page-number="${pageNumber}">${text}</button>
+  
+  `
+}
+
 
 
 function display(data){
@@ -48,15 +82,16 @@ container.innerText=null
   name.innerText=element.title
   let price=document.createElement("h2")
   price.innerText=element.price;
-  let description=document.createElement("h2")
+let description=document.createElement("h4")
 description.innerText=element.description;
-let type=document.createElement("h2")
+let divv=document.createElement("div")
+divv.classList="smallbox"
+let type=document.createElement("h4")
 type.innerText=element.type;
-let id=document.createElement("h2")
-id.innerText=element.id;
+
 
 let Buy=document.createElement("button");
-Buy.innerText="Buy"
+Buy.innerText="Add To Cart"
 Buy.addEventListener("click",()=>{
   
 let orderdata=JSON.parse(localStorage.getItem("buy"))||[] 
@@ -69,15 +104,17 @@ let orderdata=JSON.parse(localStorage.getItem("buy"))||[]
   if(present==true){
 alert("Already Placed Order")
   }
-  else{ element.quantity=1;
+  else{
     orderdata.push(element)
     localStorage.setItem("buy",JSON.stringify(orderdata))
   alert("Successfully Placed Order")
   }
 })
-
-card.append(image,name,price,description,type,id,Buy)
+divv.append(type,Buy)
+card.append(image,name,price,description,divv)
  container.append(card)
 })
-}
+} 
+
+
 
