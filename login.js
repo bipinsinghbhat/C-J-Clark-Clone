@@ -4,8 +4,9 @@ const email=document.getElementById("email");
 const password=document.getElementById("password");
 const form = document.querySelector("form");
 let loginAccount=document.querySelector("#btn");
+const registerdata=JSON.parse(localStorage.getItem("register"))||[];
 
-loginAccount.addEventListener("click", async function (event) {
+loginAccount.addEventListener("click", function (event) {
 
 	event.preventDefault();
 
@@ -18,17 +19,24 @@ loginAccount.addEventListener("click", async function (event) {
             Password:password.value,
             }
 		console.log(obj)
-		try {
-            let res=await fetch("http://localhost:3000/users"
+		// try {
+        //     let res=await fetch("http://localhost:3000/users"
               
-            )
-            let data= await res.json();
+        //     )
+        //     let data= await res.json();
+        //     let flag=false;
+        //    for(let i=0;i<data.length;i++){
+        //      if(data[i].Email==obj.Email&&data[i].Password==obj.Password){
+        //         flag=true;
+        //     }
+        // }
             let flag=false;
-           for(let i=0;i<data.length;i++){
-             if(data[i].Email==obj.Email&&data[i].Password==obj.Password){
-                flag=true;
-            }
-        }
+
+		for(let i=0;i<registerdata.length;i++){
+			if(registerdata[i].Email==obj.Email&&registerdata[i].Password==obj.Password){
+			   flag=true;
+		   }
+	   }
         if(flag){
     alert("login successfull")
 
@@ -37,10 +45,10 @@ loginAccount.addEventListener("click", async function (event) {
 }
 
             console.log(data)
-        } catch (error) {
-            console.log(error);
-        }
-	}
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+	 }
 
 });
 function validatePass(input, requiredMsg, invalidMsg) {

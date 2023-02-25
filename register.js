@@ -8,6 +8,7 @@ const firstName=document.getElementById("firstName");
 const lastName=document.getElementById("lastName");
 const password=document.getElementById("password");
 const form = document.querySelector("form");
+const registerdata=JSON.parse(localStorage.getItem("register"))||[];
 
 
 
@@ -45,6 +46,8 @@ createAccount.addEventListener("click", async function (event) {
         } catch (error) {
             console.log(error);
         }
+		registerdata.push(obj);
+		localStorage.setItem("register".JSON.stringify(registerdata))
 		alert(`Registration Successfull`);
 	}
 
