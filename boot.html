@@ -56,6 +56,17 @@
             display: grid;
           grid-template-columns: repeat(3,1fr);
         }
+        #filter{
+            display: flex;
+            flex-direction: column;
+        }
+        @media only screen and (max-width: 900px) {
+   #products{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+   }
+}
     </style>
 </head>
 
@@ -85,8 +96,7 @@
     <div id="sort">
         <select name="sort" id="port" style="width: 150px ;height: 40px; font-size: 15px;">
             <option value="">Sort By Relvence</option>
-            <option value="priceA">A-Z</option>
-            <option value="priceB">Z-A</option>
+           
             <option value="lh">Price(Low-High)</option>
             <option value="hl">Price(High-low)</option>
         </select>
