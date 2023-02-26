@@ -1,4 +1,4 @@
-let fetchdata=[];
+let fetchedData=[];
 let url="https://63f70593e8a73b486aef34da.mockapi.io/boot";
 let product=document.getElementById("products");
 let color=document.getElementById("color");
@@ -14,7 +14,7 @@ fetch(url)
     .then((acctualdata) => {
       fetchedData = acctualdata;
       console.log(fetchedData);
-      display(acctualdata);
+      display(fetchedData);
     })
     .catch((Error) => {
       console.log(Error);
@@ -37,7 +37,7 @@ function display(data) {
       let title = document.createElement("h3");
       title.innerText = element.name;
       let price = document.createElement("h4");
-      price.innerText = element.price;
+      price.innerText = `$${element.price}`;
      
       let descriptions = document.createElement("p");
       descriptions.innerText = element.description;
@@ -45,7 +45,7 @@ function display(data) {
       let cart = document.createElement("button");
       cart.innerText = "Add to cart";
       cart.addEventListener("click", () => {
-        let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartdata = JSON.parse(localStorage.getItem("buy")) || [];
         let isPresent = false;
         for (let i = 0; i < cartdata.length; i++) {
           if (cartdata[i].id == element.id) {
@@ -57,8 +57,9 @@ function display(data) {
           alert("Product Already In Cart")
         }
         else {
+          element.quantity=1;
           cartdata.push(element);
-          localStorage.setItem("cart", JSON.stringify(cartdata));
+          localStorage.setItem("buy", JSON.stringify(cartdata));
           alert("Product Added To Cart")
         }
       })
@@ -125,15 +126,25 @@ function display(data) {
 
 // sorting things
 let sort=document.getElementById("port");
-sort.addEventListener('change',()=>{
-    if(sort.value=="lh"){
-        fetchedData.sort();
-      }
-      if(sort.value=="hl"){
-        fetchedData.sort((a,b)=>Number((b.Price))-Number((a.Price)));
-      }
-      product.innerHTML==null;
+sort.addEventListener('change',(e)=>{
+  e.preventDefault();
+     console.log(fetchedData)
+
+   
+      
+      if(sort.value=="lh"){
+      fetchedData.sort((a,b)=> ((a.price))-((b.price)));
+       product.innerHTML=null;
       display(fetchedData)
+      console.log(fetchedData)
+    }
+    else if(sort.value=="hl"){
+      fetchedData.sort((a,b)=>((b.price))-((a.price)));
+       product.innerHTML=null;
+      display(fetchedData)
+      console.log(fetchedData)
+    }
 })
 
   }
+  // console.log(fetchData)

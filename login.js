@@ -3,7 +3,7 @@ const PASS_REQUIRED = "password should be greater than 4-digit";
 const email=document.getElementById("email");
 const password=document.getElementById("password");
 const form = document.querySelector("form");
-let loginAccount=document.querySelector("#btn");
+let loginAccount=document.querySelector("#btn1");
 const registerdata=JSON.parse(localStorage.getItem("register"))||[];
 
 loginAccount.addEventListener("click", function (event) {
@@ -39,6 +39,7 @@ loginAccount.addEventListener("click", function (event) {
 	   }
         if(flag){
     alert("login successfull")
+	location.href="./addTocart.html"
 
 }else{
     alert("check credential");
