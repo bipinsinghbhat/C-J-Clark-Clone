@@ -39,7 +39,7 @@ loginAccount.addEventListener("click", function (event) {
 	   }
         if(flag){
     alert("login successfull")
-	location.href="./addTocart.html"
+	location.href="./checkout.html"
 
 }else{
     alert("check credential");

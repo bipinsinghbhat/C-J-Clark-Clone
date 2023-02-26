@@ -49,6 +49,7 @@ createAccount.addEventListener("click", async function (event) {
 		registerdata.push(obj);
 		localStorage.setItem("register",JSON.stringify(registerdata))
 		alert(`Registration Successfull`);
+		location.href="./login.html"
 	}
 
 });
