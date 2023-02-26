@@ -2,7 +2,7 @@ const FNAME_REQUIRED = "Please enter your firstname";
 const EMAIL_REQUIRED="please enter your email"
 const LNAME_REQUIRED = "Please enter your lastname";
 const PASS_REQUIRED = "password should be greater than 4-digit";
-let createAccount=document.querySelector("#btn");
+let createAccount=document.querySelector("#btn1");
 const email=document.getElementById("email");
 const firstName=document.getElementById("firstName");
 const lastName=document.getElementById("lastName");
@@ -10,7 +10,7 @@ const password=document.getElementById("password");
 const form = document.querySelector("form");
 const registerdata=JSON.parse(localStorage.getItem("register"))||[];
 
-
+console.log(registerdata);
 
 
 createAccount.addEventListener("click", async function (event) {
@@ -33,21 +33,21 @@ createAccount.addEventListener("click", async function (event) {
             Role:"User"
             }
 		console.log(obj)
-		try {
-            let res=await fetch("http://localhost:3000/users",{
-                method:"POST",
-                body:JSON.stringify(obj),
-                headers:{
-                    "Content-Type":"application/json"
-                }
-            })
-            let data= await res.json();
-            console.log(data)
-        } catch (error) {
-            console.log(error);
-        }
+		// try {
+        //     let res=await fetch("http://localhost:3000/users",{
+        //         method:"POST",
+        //         body:JSON.stringify(obj),
+        //         headers:{
+        //             "Content-Type":"application/json"
+        //         }
+        //     })
+        //     let data= await res.json();
+        //     console.log(data)
+        // } catch (error) {
+        //     console.log(error);
+        // }
 		registerdata.push(obj);
-		localStorage.setItem("register".JSON.stringify(registerdata))
+		localStorage.setItem("register",JSON.stringify(registerdata))
 		alert(`Registration Successfull`);
 	}
 
