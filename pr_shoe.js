@@ -115,7 +115,7 @@ let Buy=document.createElement("button");
 Buy.innerText="Add To Cart"
 Buy.addEventListener("click",()=>{
   
-let orderdata=JSON.parse(localStorage.getItem("buy"))||[] 
+let orderdata=JSON.parse(localStorage.getItem("cart"))||[] 
   let present=false;
   for(let i=0;i<orderdata.length;i++){
     if(element.id===orderdata[i].id){
