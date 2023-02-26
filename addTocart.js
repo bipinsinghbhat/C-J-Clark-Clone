@@ -6,7 +6,7 @@ const subtotal=document.querySelector("#subtotal");
 
 const applybutton=document.querySelector(".apply");
 const applyinput=document.querySelector("#promo");
-let Lsdata=JSON.parse(localStorage.getItem("cart"))||[];
+let Lsdata=JSON.parse(localStorage.getItem("buy"))||[];
 let tsum=localStorage.getItem("sum");
 let sum=0;
 console.log(Lsdata)
@@ -58,7 +58,7 @@ function incre(a){
                 console.log(sum);
                  subtotal.innerText= "$"+Math.floor(sum);
                 Estimatedtotal.innerText="$"+Math.floor(sum); 
-            localStorage.setItem("cart",JSON.stringify(Lsdata))
+            localStorage.setItem("buy",JSON.stringify(Lsdata))
         }
     }
     
@@ -79,7 +79,7 @@ function decre(a){
             redercart(Lsdata)
             
             // sumtotal(Lsdata)
-            localStorage.setItem("cart",JSON.stringify(Lsdata))
+            localStorage.setItem("buy",JSON.stringify(Lsdata))
         }
     }
     
@@ -97,7 +97,7 @@ function del(a){
             Lsdata.splice(i,1);
             redercart(Lsdata)
             // sumtotal(Lsdata)
-            localStorage.setItem("cart",JSON.stringify(Lsdata))
+            localStorage.setItem("buy",JSON.stringify(Lsdata))
         }
     }
             
@@ -133,7 +133,7 @@ function del(a){
                 e.preventDefault();
                 tsum=Math.floor(sum);
                 localStorage.setItem("sum",tsum)
-                location.href="./checkout.html"
+                location.href="./login.html"
             })
         }
         

@@ -1,4 +1,4 @@
-let Lsdata=JSON.parse(localStorage.getItem("cart"))||[];
+let Lsdata=JSON.parse(localStorage.getItem("buy"))||[];
 let tsum=localStorage.getItem("sum");
 const appendcards=document.querySelector(".cart");
 const Estimatedtotal=document.querySelector("#Estimated-total");
@@ -7,6 +7,7 @@ const subtotal=document.querySelector("#subtotal");
 Estimatedtotal.innerText=tsum;
 subtotal.innerText=tsum;
 const payment=document.querySelector(".address");
+const product=document.querySelector(".product");
 
 redercart(Lsdata)
 
@@ -50,6 +51,9 @@ e.preventDefault;
     redercart(Lsdata)
     Estimatedtotal.innerText=tsum;
 subtotal.innerText=tsum;
+setTimeout(() => {
+    location.href="./thanks.html"
+}, 5000);
 })
 const FNAME_REQUIRED = "Please fill the required imformation";
 // let createAccount=document.querySelector("#btn");
