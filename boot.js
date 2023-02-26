@@ -45,7 +45,7 @@ function display(data) {
       let cart = document.createElement("button");
       cart.innerText = "Add to cart";
       cart.addEventListener("click", () => {
-        let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartdata = JSON.parse(localStorage.getItem("buy")) || [];
         let isPresent = false;
         for (let i = 0; i < cartdata.length; i++) {
           if (cartdata[i].id == element.id) {
@@ -58,7 +58,7 @@ function display(data) {
         }
         else {
           cartdata.push(element);
-          localStorage.setItem("cart", JSON.stringify(cartdata));
+          localStorage.setItem("buy", JSON.stringify(cartdata));
           alert("Product Added To Cart")
         }
       })
