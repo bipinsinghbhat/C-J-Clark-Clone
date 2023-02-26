@@ -1,5 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
 #bigbox{
-    border:2px solid red;
+ 
     width: 90%;
     margin: auto;
     }
@@ -13,10 +19,7 @@
         text-align: center;
     }
     
-    #box1{
-        border:2px solid red;
-        
-    }
+   
     #box2 {
         display: flex;
       justify-content: center;
@@ -37,26 +40,26 @@
      
     }
     #secondbigbox{
-        border:2px solid grey;
+      
         display: flex; 
     }
     #filterdetails{
-        border:2px solid black;
+        
         width: 20%;
     }
     #cont_sort{
-        border:2px solid black;
+      
         width: 80%;
     }
     #sortby{
-        border:2px solid grey;
+     
         display: flex; 
     }
     
     
     
     #container{
-        border:2px solid grey;
+        
        
         display:grid;
         grid-template-columns: repeat(3,1fr);
@@ -64,7 +67,7 @@
        
         
     }
-    #container div{
+    #container >div{
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         
     }
@@ -77,8 +80,9 @@
     #container button{
         
         margin-left: 120px;
-       height: 30px;
-       width: 50px;
+       height: 40px;
+       width: 80px;
+       margin-bottom: 10px;
     }
     
     .filter{
@@ -86,6 +90,29 @@
         width: 100%;
        
      }
+
+     #container div > div{
+       
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: -20px;
+     }
+     
+     #container h2,h4 {
+        margin-left: 10px;
+     }
+    .pagination-button{
+    
+        
+          width: 30px;
+          margin-bottom: 20px;
+    }
+    #pag{
+     
+     
+        padding-left: 400px;
+    }
      
 
 

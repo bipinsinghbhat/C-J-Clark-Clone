@@ -4,7 +4,7 @@ const checkouttotal=document.querySelector(".checkout-total");
 const Estimatedtotal=document.querySelector(".Estimated-total");
 const applybutton=document.querySelector(".apply");
 const applyinput=document.querySelector("#promo");
-let Lsdata=JSON.parse(localStorage.getItem("buy"))||[];
+let Lsdata=JSON.parse(localStorage.getItem("cart"))||[];
 console.log(Lsdata)
 redercart(Lsdata)
 function redercart(data){
@@ -47,7 +47,7 @@ function incre(a){
         if(Lsdata[i].id==a){
             Lsdata[i].quantity++;
             redercart(Lsdata)
-            localStorage.setItem("buy",JSON.stringify(Lsdata))
+            localStorage.setItem("cart",JSON.stringify(Lsdata))
         }
     }
     
@@ -61,7 +61,7 @@ function decre(a){
                 Lsdata[i].quantity--;
             }
             redercart(Lsdata)
-            localStorage.setItem("buy",JSON.stringify(Lsdata))
+            localStorage.setItem("cart",JSON.stringify(Lsdata))
         }
     }
     
@@ -73,7 +73,7 @@ function del(a){
         if(Lsdata[i].id==a){
             Lsdata.splice(i,1);
             redercart(Lsdata)
-            localStorage.setItem("buy",JSON.stringify(Lsdata))
+            localStorage.setItem("cart",JSON.stringify(Lsdata))
         }
     }
             
