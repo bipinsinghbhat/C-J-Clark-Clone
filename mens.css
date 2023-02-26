@@ -23,7 +23,10 @@
     text-decoration: none;
     color: black;
 }
-
+body{
+    width: 90%;
+    margin: auto;
+}
 
 
 /*-------------------------- navbar css =================================> */
