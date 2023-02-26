@@ -57,6 +57,7 @@ function display(data) {
           alert("Product Already In Cart")
         }
         else {
+          element.quantity=1;
           cartdata.push(element);
           localStorage.setItem("buy", JSON.stringify(cartdata));
           alert("Product Added To Cart")
