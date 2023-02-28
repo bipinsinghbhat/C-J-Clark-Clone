@@ -47,7 +47,7 @@ filterselect.addEventListener("change",()=>{
 
 
 function fetchdata(pageNumber=1){ 
-fetch(`https://buy-ffashion.onrender.com/Mensshoe?_limit=9&_page=${pageNumber}`)
+fetch(`https://buyfashionvish.onrender.com/menshoes?_limit=9&_page=${pageNumber}`)
  
 .then((res)=>{
  let totalusers=res.headers.get("X-Total-Count")
@@ -102,7 +102,7 @@ container.innerText=null
   let name=document.createElement("h2")
   name.innerText=element.title
   let price=document.createElement("h2")
-  price.innerText=element.price;
+  price.innerText=`${element.price}`;
 let description=document.createElement("h4")
 description.innerText=element.description;
 let divv=document.createElement("div")
@@ -115,7 +115,7 @@ let Buy=document.createElement("button");
 Buy.innerText="Add To Cart"
 Buy.addEventListener("click",()=>{
   
-let orderdata=JSON.parse(localStorage.getItem("cart"))||[] 
+let orderdata=JSON.parse(localStorage.getItem("buy"))||[] 
   let present=false;
   for(let i=0;i<orderdata.length;i++){
     if(element.id===orderdata[i].id){
@@ -126,6 +126,7 @@ let orderdata=JSON.parse(localStorage.getItem("cart"))||[]
 alert("Already Placed Order")
   }
   else{
+    element.quantity=1;
     orderdata.push(element)
     localStorage.setItem("buy",JSON.stringify(orderdata))
   alert("Successfully Placed Order")

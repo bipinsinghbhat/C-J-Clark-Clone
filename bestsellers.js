@@ -8,7 +8,7 @@ let mysearchbykk=document.getElementById("searchbykk");
     let myheading=document.getElementById("count");
     let count=0;
  
-    let LSdata=JSON.parse(localStorage.getItem("current"));
+    let LSdata=JSON.parse(localStorage.getItem("buy"));
     if(LSdata==null){
       LSdata={};
     }
@@ -123,7 +123,8 @@ let mysearchbykk=document.getElementById("searchbykk");
 
 
 
-    let request=fetch("https://embarrassed-bull-moccasins.cyclic.app/products");
+    // let request=fetch("https://embarrassed-bull-moccasins.cyclic.app/products");
+    let request=fetch("https://buyfashionvish.onrender.com/bestseller");
     request.then(function(res){
       let reqdata=res.json();
       console.log(reqdata)
@@ -173,14 +174,16 @@ let mysearchbykk=document.getElementById("searchbykk");
         myprice.innerText=`$ ${element.price}`;
 
        let myanchortag=document.createElement("a");
-       myanchortag.setAttribute("href","./oneproduct.html")
+      //  myanchortag.setAttribute("href","./oneproduct.html")
 
         
         let myaddtocartbtn=document.createElement("button");
         myaddtocartbtn.innerText="Add to Cart";
         myaddtocartbtn.addEventListener("click",function(){
-
-            LSdata=element;
+          element.quantity=1;
+          element.title=element.type;
+          element.img=element.image;
+            LSdata.push(element);
             
             
 
@@ -188,7 +191,7 @@ let mysearchbykk=document.getElementById("searchbykk");
 
           
 
-          localStorage.setItem("current",JSON.stringify(LSdata));
+          localStorage.setItem("buy",JSON.stringify(LSdata));
 
         })
         myanchortag.append(myaddtocartbtn)
@@ -216,5 +219,5 @@ let mysearchbykk=document.getElementById("searchbykk");
 
     }
     document.querySelector("#cartA").addEventListener("click",function(){
-      window.location.href="cart.html"
+      window.location.href="addTocart.html"
     })
